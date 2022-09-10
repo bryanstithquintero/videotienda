@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-100" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BVS Catalog</title>
-    <link rel="shortcut icon" href="/images/CVS-Logo.png" type="image/png">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/template.css">
-    <link rel="stylesheet" href="CSS/catalog.css">
-
+    <title>CVS Contact</title>
+    <link rel="shortcut icon" href="images/CVS-Logo.png" type="image/png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body class="d-flex h-100 text-center text-white bg-dark">
@@ -79,173 +78,90 @@
                             </g>
                         </g>
                     </svg>
-                    Bryan's VS
+                    Bryan's Video Shop
                 </h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="/">Home</a>
-                    <a class="nav-link fw-bold py-1 px-0 active" href="catalog.html">Catalog</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="contact.html">Contact</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="login.html">Login</a>
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/catalog">Catalog</a>
+                    <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                    <a class="nav-link" href="/login">Login</a>
                 </nav>
             </div>
         </header>
-        <main>
-            <div th:if="false" id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#777" />
-                        </svg>
-
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1>Example headline.</h1>
-                                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#777" />
-                        </svg>
-
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>Another example headline.</h1>
-                                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#777" />
-                        </svg>
-
-                        <div class="container">
-                            <div class="carousel-caption text-end">
-                                <h1>One more for good measure.</h1>
-                                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <div id="data">
-                <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
-                    <a href="/"
-                        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32">
-                            <use xlink:href="#bootstrap" />
-                        </svg>
-                        <span class="fs-4">Categories</span>
-                    </a>
-                    <hr>
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#home" />
-                                </svg>
-                                Drama
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#speedometer2" />
-                                </svg>
-                                Action
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#table" />
-                                </svg>
-                                Sci-fi
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#grid" />
-                                </svg>
-                                Romance
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#people-circle" />
-                                </svg>
-                                Terror
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="album py-5 d-flex flex-column flex-shrink-0 p-3">
-                    <div class="container">
-
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                            <div class="col">
-                                <div class="card shadow-sm">
-                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                        xmlns="http://www.w3.org/2000/svg" role="img"
-                                        aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
-                                        focusable="false">
-                                        <title>Placeholder</title>
-                                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%"
-                                            fill="#eceeef" dy=".3em">Thumbnail</text>
-                                    </svg>
-
-                                    <div class="card-body text-dark">
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural
-                                            lead-in to additional content. This content is a little bit longer.</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary">Detail</button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-secondary">Cart</button>
-                                            </div>
-                                            <small class="text-muted">120 mins</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <main class="container mb-auto">
+            <div class="row">
+                <!-- Section Titile -->
+                <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
+                    <h1 class="section-title">Love to Hear From You</h1>
                 </div>
             </div>
+            <div class="row">
+                <!-- Section Titile -->
+                <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using Content.</p>
+
+                    <div class="find-widget">
+                        Company: <a href="https://hostriver.ro">HostRiver</a>
+                    </div>
+                    <div class="find-widget">
+                        Address: <a href="#">4435 Berkshire Circle Knoxville</a>
+                    </div>
+                    <div class="find-widget">
+                        Phone: <a href="#">+ 879-890-9767</a>
+                    </div>
+
+                    <div class="find-widget">
+                        Website: <a href="https://uny.ro">www.uny.ro</a>
+                    </div>
+                    <div class="find-widget">
+                        Program: <a href="#">Mon to Sat: 09:30 AM - 10.30 PM</a>
+                    </div>
+                </div>
+                <!-- contact form -->
+                <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+                    <form class="shake" role="form" method="post" id="contactForm" name="contact-form"
+                        data-toggle="validator">
+                        <!-- Name -->
+                        <div class="text-left">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- email -->
+                        <div>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Subject -->
+                        <div>
+                            <label for="msg_subject" class="form-label">Subject</label>
+                            <input type="email" class="form-control" id="msg_subject" placeholder="Subject" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control text-dark" id="message" placeholder="Message" rows="3"
+                                required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Form Submit -->
+                        <div class="form-submit mt-2">
+                            <button class="btn btn-primary w-100" type="submit" id="form-submit">
+                                <i class="material-icons mdi mdi-message-outline"></i> Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
         </main>
         <footer class="mt-auto text-white-50">
             <p>Developed by <a href="mailto:bryanquinterog@gmail.com">Bryan Quintero</a>. 2022</p>
         </footer>
     </div>
-    <script src="JS/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
