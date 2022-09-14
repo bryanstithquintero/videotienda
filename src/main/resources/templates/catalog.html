@@ -79,7 +79,7 @@
                             </g>
                         </g>
                     </svg>
-                    Bryan's VS
+                    Bryan's Video Shop
                 </h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="/">Home</a>
@@ -171,12 +171,12 @@
                         </li>
                     </ul>
                 </div>
-                <div id="error" th:if="${error != null}">
+                <div id="error" th:if="${Error != null}">
                     <div th:text="${error}" class="alert alert-warning text-dark" role="alert">
                         Error
                     </div>
                 </div>
-                <div id="results" th:if="${error == null}">
+                <div id="results" th:if="${Error == null}">
                     <h1 th:text="${title}">Hola</h1>
                     <div class="d-flex flex-column flex-shrink-0 p-3 album">
                         <div class="container">
