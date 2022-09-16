@@ -5,19 +5,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import co.edu.utp.misiontic.bryan.videotienda.service.CatalogService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 //spring mvc
-
+@AllArgsConstructor
 @Controller // esto dice que es un controlador
 @Slf4j
 public class videoShopController {
 
         private CatalogService catalogService;
-
-        public videoShopController(CatalogService catalogService) {
-                this.catalogService = catalogService;
-        }
 
         @GetMapping("/catalog")
         public String goToCatalog(Model model) { // model es la forma en que se comunica con html para moverme menu

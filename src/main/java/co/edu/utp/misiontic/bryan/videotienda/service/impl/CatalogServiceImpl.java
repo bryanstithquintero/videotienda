@@ -1,60 +1,59 @@
 package co.edu.utp.misiontic.bryan.videotienda.service.impl;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.CategoryDto;
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.MovieDto;
+import co.edu.utp.misiontic.bryan.videotienda.model.repository.CategoryRepository;
+import co.edu.utp.misiontic.bryan.videotienda.model.repository.MovieRepository;
 import co.edu.utp.misiontic.bryan.videotienda.service.CatalogService;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Service
-
 public class CatalogServiceImpl implements CatalogService {
 
-    private final List<CategoryDto> categories = Arrays.asList(
-            new CategoryDto("Action", 1),
-            new CategoryDto("Comedy", 2),
-            new CategoryDto("Romance", 3),
-            new CategoryDto("Sci-fi", 4));
+        private final CategoryRepository categoryRepository;
+        private final MovieRepository movieRepository;
 
-    private final List<MovieDto> movies = Arrays.asList(
-            new MovieDto(1, "The Matrix", 4,
-                    "Cuando una bella desconocida lleva al hacker Neo a un inframundo prohibido, descubre la impactante verdad: la vida que conoce es un elaborado engaño de una ciberinteligencia malvada.",
-                    120, null),
-            new MovieDto(2, "Dumb and Dumber", 2, "Esta pelicula trata de ..", 90, null),
-            new MovieDto(2, "Dumb and Dumber", 2,
-                    "Cuando una bella desconocida lleva al hacker Neo a un inframundo prohibido, descubre la impactante verdad: la vida que conoce es un elaborado engaño de una ciberinteligencia malvada.",
-                    90, null),
-            new MovieDto(2, "Dumb and Dumber", 2, "Esta pelicula trata de ..", 90, null),
-            new MovieDto(2, "Dumb and Dumber", 2, "Esta pelicula trata de ..", 90, null),
-            new MovieDto(2, "Dumb and Dumber", 2, "Esta pelicula trata de ..", 90, null));
+        @Override
+        public List<CategoryDto> getCategories() {
+                var categories = categoryRepository.findAll(Sort.by("name"));
 
-    @Override
-    public List<CategoryDto> getCategories() {
-        return categories;
-    }
+                return categories.stream().map(cat -> new CategoryDto(cat.getName(), cat.getId().intValue()))
+                                .collect(Collectors.toList());
+        }
 
-    @Override
-    public Optional<CategoryDto> getCategoryById(Integer id) {
+        @Override
+        public Optional<CategoryDto> getCategoryById(Integer id) {
+                var category = categoryRepository.findById(id.longValue());
 
-        var category = categories.stream()
-                .filter(c -> c.getId().equals(id))
-                .findFirst();
-        return category;
-    }
+                if (category.isEmpty()) {
+                        return Optional.empty();
+                }
 
-    @Override
-    public List<MovieDto> getMoviesByCategoryId(Integer CategoryId) {
+                return Optional.of(new CategoryDto(category.get().getName(), category.get().getId().intValue()));
+        }
 
-        var categoryMovies = movies.stream()
-                .filter(m -> m.getCategoryId().equals(CategoryId))
-                .collect(Collectors.toList());
+        @Override
+        public List<MovieDto> getMoviesByCategoryId(Integer categoryId) {
+                var movies = movieRepository.findAllByCategoryId(categoryId.longValue());
+                var categoryMovies = movies.stream()
+                                .map(mov -> MovieDto.builder()
+                                                .id(mov.getCode().intValue())
+                                                .length(mov.getLength())
+                                                .name(mov.getName())
+                                                .description(mov.getDescription())
+                                                .imageUrl(mov.getImageUrl())
+                                                .build())
+                                .collect(Collectors.toList());
 
-        return categoryMovies;
-    }
+                return categoryMovies;
+        }
 
 }
