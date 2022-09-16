@@ -5,7 +5,6 @@ import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
 
 import co.edu.utp.misiontic.bryan.videotienda.model.entity.Category;
 import co.edu.utp.misiontic.bryan.videotienda.model.entity.Movie;
