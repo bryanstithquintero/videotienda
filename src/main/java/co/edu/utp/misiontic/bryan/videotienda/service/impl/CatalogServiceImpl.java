@@ -43,13 +43,15 @@ public class CatalogServiceImpl implements CatalogService {
         @Override
         public List<MovieDto> getMoviesByCategoryId(Integer categoryId) {
                 var movies = movieRepository.findAllByCategoryId(categoryId.longValue());
+
                 var categoryMovies = movies.stream()
                                 .map(mov -> MovieDto.builder()
-                                                .id(mov.getCode().intValue())
+                                                .id(mov.getCode())
                                                 .length(mov.getLength())
                                                 .name(mov.getName())
                                                 .description(mov.getDescription())
                                                 .imageUrl(mov.getImageUrl())
+                                                .price(mov.getValue())
                                                 .build())
                                 .collect(Collectors.toList());
 

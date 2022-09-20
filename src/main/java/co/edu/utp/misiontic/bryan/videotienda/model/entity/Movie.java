@@ -13,12 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Movie {
+
     @Id
-    private Long code;
+    private String code;
 
     private String name;
     private String description;
     private Integer length;
+    private Double value;
     private String imageUrl;
 
     @ManyToOne

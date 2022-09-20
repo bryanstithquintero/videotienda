@@ -10,10 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MovieDto {
-    private Integer id;
+    private String id;
     private String name;
     private Integer categoryId;
     private String description;
     private Integer length;
+    private Double price;
     private String imageUrl;
 }
