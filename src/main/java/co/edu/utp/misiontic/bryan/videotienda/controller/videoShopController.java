@@ -16,6 +16,11 @@ public class videoShopController {
 
         private CatalogService catalogService;
 
+        @GetMapping(value = { "/", "/index", "/index.html" })
+        public String goToIndex(Model model) {
+                return "index";
+        }
+
         @GetMapping("/catalog")
         public String goToCatalog(Model model) { // model es la forma en que se comunica con html para moverme menu
                 var categories = this.catalogService.getCategories();
@@ -57,5 +62,10 @@ public class videoShopController {
         @GetMapping("/login")
         public String goToLogin(Model model) {
                 return "login";
+        }
+
+        @GetMapping("/cart")
+        public String goToCart(Model model) {
+                return "cart";
         }
 }
