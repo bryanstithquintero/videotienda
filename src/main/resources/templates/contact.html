@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CVS Contact</title>
+    <title>BVS Contact</title>
     <link rel="shortcut icon" href="/images/CVS-Logo.png" type="image/png">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/template.css">
@@ -48,31 +48,33 @@
                 </div>
                 <!-- contact form -->
                 <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
-                    <form class="shake" role="form" method="post" id="contactForm" name="contact-form"
-                        data-toggle="validator">
+                    <form method="post" action="/contact/register" class="shake" role="form" id="contactForm"
+                        name="contact-form" data-toggle="validator">
                         <!-- Name -->
                         <div class="text-left">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name" required>
+                            <input id="name" name="name" type="text" class="form-control" placeholder="Name" required>
                             <div class="help-block with-errors"></div>
                         </div>
                         <!-- email -->
                         <div>
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email"
+                                required>
                             <div class="help-block with-errors"></div>
                         </div>
                         <!-- Subject -->
                         <div>
                             <label for="msg_subject" class="form-label">Subject</label>
-                            <input type="email" class="form-control" id="msg_subject" placeholder="Subject" required>
+                            <input id="msg_subject" name="subject" type="text" class="form-control"
+                                placeholder="Subject" required>
                             <div class="help-block with-errors"></div>
                         </div>
                         <!-- Message -->
                         <div>
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control text-dark" id="message" placeholder="Message" rows="3"
-                                required></textarea>
+                            <textarea id="message" name="message" class="form-control text-dark" placeholder="Message"
+                                rows="3" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
                         <!-- Form Submit -->

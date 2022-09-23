@@ -14,5 +14,14 @@ const loadUserConfig = () => {
         document.getElementById("user-fullname").innerText = userInfo.name;
     }
 };
+const isAdmin = () => {
+    const user = localStorage.getItem("loggedUser");
+    if (user == undefined) {
+        return false;
+    }
+
+    const userInfo = JSON.parse(user);
+    return userInfo.admin;
+};
 
 loadUserConfig();
