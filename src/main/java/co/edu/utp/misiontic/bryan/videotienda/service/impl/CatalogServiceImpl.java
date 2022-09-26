@@ -77,4 +77,17 @@ public class CatalogServiceImpl implements CatalogService {
 
         }
 
+        @Override
+        public MovieDto getMovieById(String id) {
+                var movieOp = movieRepository.findById(id);
+                var movie = movieOp.get();
+                return MovieDto.builder()
+                                .id(movie.getCode())
+                                .length(movie.getLength())
+                                .name(movie.getName())
+                                .description(movie.getDescription())
+                                .imageUrl(movie.getImageUrl())
+                                .price(movie.getValue())
+                                .build();
+        }
 }

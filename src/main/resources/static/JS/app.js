@@ -25,3 +25,9 @@ const isAdmin = () => {
 };
 
 loadUserConfig();
+
+const logout = () => {
+    localStorage.removeItem("loggedUser");
+
+    loadUserConfig();
+}
