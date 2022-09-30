@@ -90,4 +90,21 @@ public class CatalogServiceImpl implements CatalogService {
                                 .price(movie.getValue())
                                 .build();
         }
+
+        @Override
+        public List<MovieDto> getAll() {
+                var movies = movieRepository.findAll();
+
+                var movie = movies.stream()
+                                .map(mov -> MovieDto.builder()
+                                                .id(mov.getCode())
+                                                .length(mov.getLength())
+                                                .name(mov.getName())
+                                                .description(mov.getDescription())
+                                                .imageUrl(mov.getImageUrl())
+                                                .price(mov.getValue())
+                                                .build())
+                                .collect(Collectors.toList());
+                return movie;
+        }
 }

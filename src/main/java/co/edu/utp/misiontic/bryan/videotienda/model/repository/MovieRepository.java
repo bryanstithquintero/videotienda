@@ -13,4 +13,6 @@ public interface MovieRepository extends JpaRepository<Movie, String> {
 
     List<Movie> findAllByDescriptionLikeOrderByNameAsc(String description);
 
+    List<Movie> findAll();
+
 }

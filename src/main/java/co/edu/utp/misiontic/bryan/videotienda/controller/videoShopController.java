@@ -28,9 +28,9 @@ public class videoShopController {
         @GetMapping("/catalog")
         public String goToCatalog(Model model) { // model es la forma en que se comunica con html para moverme menu
                 var categories = this.catalogService.getCategories();
+                var movies = this.catalogService.getAll();
 
-                model.addAttribute("title", "Welcome to my site");
-                model.addAttribute("categories", categories);
+                model.addAttribute("movies", movies);
                 return "catalog";
         }
 
@@ -52,7 +52,7 @@ public class videoShopController {
 
                         var categoryMovies = this.catalogService.getMoviesByCategoryId(id);
 
-                        model.addAttribute("movies", categoryMovies);
+                        model.addAttribute("moviess", categoryMovies);
                 }
 
                 return "catalog";
