@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.ContactDto;
+import co.edu.utp.misiontic.bryan.videotienda.controller.dto.FilterDto;
 import co.edu.utp.misiontic.bryan.videotienda.service.CatalogService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,15 +23,17 @@ public class videoShopController {
 
         @GetMapping(value = { "/", "/index", "/index.html" })
         public String goToIndex(Model model) {
+                model.addAttribute("page", "Home");
                 return "index";
         }
 
         @GetMapping("/catalog")
         public String goToCatalog(Model model) { // model es la forma en que se comunica con html para moverme menu
                 var categories = this.catalogService.getCategories();
-                var movies = this.catalogService.getAll();
 
-                model.addAttribute("movies", movies);
+                model.addAttribute("title", "Welcome to my site");
+                model.addAttribute("categories", categories);
+                model.addAttribute("page", "catalog");
                 return "catalog";
         }
 
@@ -93,6 +96,13 @@ public class videoShopController {
 
                 model.addAttribute("info", contactInfo);
                 return "thanks";
+        }
+
+        @GetMapping("/filter")
+        public String goToFilter(@ModelAttribute FilterDto filter, Model model) {
+                log.info("Filter: {}", filter.toString());
+
+                return "filter";
         }
 
 }

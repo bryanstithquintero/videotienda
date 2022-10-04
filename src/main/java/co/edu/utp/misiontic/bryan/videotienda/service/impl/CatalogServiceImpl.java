@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.CategoryDto;
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.ContactDto;
+import co.edu.utp.misiontic.bryan.videotienda.controller.dto.FilterDto;
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.MovieDto;
 import co.edu.utp.misiontic.bryan.videotienda.model.entity.Contact;
 import co.edu.utp.misiontic.bryan.videotienda.model.repository.CategoryRepository;
@@ -106,5 +107,18 @@ public class CatalogServiceImpl implements CatalogService {
                                                 .build())
                                 .collect(Collectors.toList());
                 return movie;
+        }
+
+        @Override
+        public List<MovieDto> getMoviesByFilter(FilterDto filter) {
+                var types = filter.getType() != null;
+                var schools = filter.getSchool() != null;
+
+                if (types && schools) {
+                        // movieRepository.findAllByTypeIdInAndSchoolIdIn(filter.getType(),
+                        // filter.getSchool());
+                        // SELECT * FROM movie WHERE type in ('d') and school in ('1', '2');
+                }
+                return null;
         }
 }

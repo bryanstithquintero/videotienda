@@ -174,14 +174,14 @@
                         <img src="/src/main/resources/static/images/noimage.jpg" alt="Movie image">
                     </div>
                     <div>
-                        <video width="320" height="240" controls>
-                            <source id="detaill-video" src="/videos/movie.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe id="detail-video" class="col-8"
+                            src="https://www.imdb.com/video/imdb/vi1186773529/imdb/embed?autoplay=false&width=320"
+                            allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+                            frameborder="no" scrolling="no"></iframe>
                     </div>
-                    <div id="detail-categories">
+                    <p id="detail-categories">
                         <span class="rounded-pill">Drama</span> - <span class="rounded-pill">Triller</span>
-                    </div>
+                    </p>
                     <p id="detail-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quam,
                         cumque rem eum exercitationem doloremque recusandae repudiandae nisi doloribus et quod culpa
                         officia in accusamus odit quae sed alias accusantium.</p>
@@ -195,6 +195,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/cart.js"></script>
+    <script src="/js/imdb.js"></script>
 </body>
 
 </html>

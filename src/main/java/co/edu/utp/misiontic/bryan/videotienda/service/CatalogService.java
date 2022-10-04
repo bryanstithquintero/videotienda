@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.CategoryDto;
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.ContactDto;
+import co.edu.utp.misiontic.bryan.videotienda.controller.dto.FilterDto;
 import co.edu.utp.misiontic.bryan.videotienda.controller.dto.MovieDto;
 
 public interface CatalogService {
@@ -19,4 +20,6 @@ public interface CatalogService {
     MovieDto getMovieById(String id);
 
     List<MovieDto> getAll();
+
+    List<MovieDto> getMoviesByFilter(FilterDto filter);
 }

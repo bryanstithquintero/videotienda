@@ -43,3 +43,7 @@
 .movie {
     height: 100%;
 }
+
+#detail-img img {
+    width: 100%;
+}
