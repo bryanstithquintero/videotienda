@@ -166,21 +166,23 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="detail-title">Movie title</h2>
-                    <p>
+                    <div>
                         <span id="detail-year">2022</span> - <span id="detail-rating">PG-13</span> - <span
                             id="detail-duration|">2h 5m</span>
-                    </p>
-                    <div>
-                        <img src="/src/main/resources/static/images/noimage.jpg" alt="Movie image">
                     </div>
-                    <div>
+                    <div class="row">
+                        <div id="detail-img" class="col-4">
+                            <img src="/src/main/resources/static/images/noimage.jpg" alt="Movie image">
+                        </div>
                         <iframe id="detail-video" class="col-8"
                             src="https://www.imdb.com/video/imdb/vi1186773529/imdb/embed?autoplay=false&width=320"
                             allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
                             frameborder="no" scrolling="no"></iframe>
                     </div>
                     <p id="detail-categories">
-                        <span class="rounded-pill">Drama</span> - <span class="rounded-pill">Triller</span>
+                        <span class="badge text-bg-dark">Drama</span>
+                        -
+                        <span class="badge text-bg-dark">Triller</span>
                     </p>
                     <p id="detail-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quam,
                         cumque rem eum exercitationem doloremque recusandae repudiandae nisi doloribus et quod culpa
